@@ -1,0 +1,205 @@
+/* components/Header.css */
+.header {
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary-300);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: var(--color-muted);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-text);
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  height: 2px;
+  width: 20px;
+  background: var(--color-text);
+}
+
+/* Responsive nav */
+@media (max-width: 960px) {
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 16px;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links a {
+    padding: 8px 4px;
+  }
+
+  .nav-links.nav-links-mobile {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--color-muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-text);
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-menu-btn span {
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+}
+
+@media (max-width: 960px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .nav-links.nav-links-mobile {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+}
+
+.header {
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  color: var(--color-primary-300);
+  font-weight: 800;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links a {
+  color: var(--color-muted);
+}
+
+.nav-links a:hover {
+  color: var(--color-text);
+}
+
+/* components styles have been relocated to App.css */
