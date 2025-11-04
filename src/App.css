@@ -22,11 +22,11 @@ section[id] {
 
 /* Alternating backgrounds for top-level sections */
 .App > section:nth-of-type(odd) {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  background: var(--color-bg-light);
 }
 
 .App > section:nth-of-type(even) {
-  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  background: var(--color-bg-alt);
 }
 
 .step-card {
@@ -71,7 +71,7 @@ section[id] {
 }
 
 .btn-primary {
-  color: #0b0f1a;
+  color: #ffffff;
   background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
   box-shadow: var(--shadow-md);
 }
@@ -126,8 +126,8 @@ section[id] {
 .hero {
   position: relative;
   padding: 120px 0 80px;
-  background: radial-gradient(1200px 400px at 50% -100px, rgba(124,58,237,0.25), transparent),
-              radial-gradient(800px 300px at 80% 10%, rgba(34,211,238,0.18), transparent);
+  background: radial-gradient(1200px 400px at 50% -100px, rgba(91,45,145,0.28), transparent),
+              radial-gradient(800px 300px at 80% 10%, rgba(168,143,214,0.22), transparent);
 }
 
 .hero .container {
@@ -155,7 +155,7 @@ section[id] {
 .products { background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); }
 .product-card { text-align: center; position: relative; transition: transform .2s ease; }
 .product-card.popular { transform: scale(1.03); border: 1px solid rgba(124,58,237,0.35); }
-.popular-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background: var(--color-primary); color:#0b0f1a; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 800; }
+.popular-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background: var(--color-primary); color:#ffffff; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 800; }
 .product-name { font-size: 18px; font-weight: 800; color: var(--color-primary-300); margin: 0 0 4px; }
 .product-title { font-size: 16px; font-weight: 700; margin: 0 0 12px; color: var(--color-text); }
 .product-price { font-size: 28px; font-weight: 900; margin: 0 0 12px; }
@@ -180,13 +180,14 @@ section[id] {
 .final-cta p { font-size: 18px; margin: 0 0 24px; color: var(--color-muted); }
 
 /* Footer */
-.footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 0 20px; }
+.footer { background: var(--color-primary); border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 0 20px; }
 .footer-content { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; margin-bottom: 24px; }
 .footer-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.link-group h4 { margin: 0 0 12px; color: var(--color-primary-300); }
-.link-group a { display: block; color: var(--color-muted); text-decoration: none; margin: 0 0 8px; }
+.footer-brand p { color: #fff; }
+.link-group h4 { margin: 0 0 12px; color: #fff; }
+.link-group a { display: block; color: #fff; text-decoration: none; margin: 0 0 8px; }
 .link-group a:hover { color: var(--color-text); }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; text-align: center; color: var(--color-muted); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; text-align: center; color: #fff; }
 
 /* Forms */
 .form-group { margin-bottom: 16px; }
@@ -211,12 +212,13 @@ section[id] {
 
 /* ======= GLOBAL THEME ======= */
 :root {
+  /* Diona-like purple/yellow palette */
   --color-bg-light: #ffffff;
-  --color-bg-alt: #f8f9fb;
-  --color-text: #111;
-  --color-muted: #555;
-  --color-primary: #2b6bf3;
-  --color-primary-light: #60a5fa;
+  --color-bg-alt: #faf7ff;
+  --color-text: #1b1b1f;
+  --color-muted: #6b7280;
+  --color-primary: #5B2D91;           /* deep purple */
+  --color-primary-light: #8f6cc4;     /* lighter purple */
   --radius-md: 12px;
   --radius-lg: 20px;
   --shadow-sm: 0 2px 10px rgba(0,0,0,0.06);
@@ -246,6 +248,11 @@ body {
 /* ======= SECTION SPACING ======= */
 section {
   padding: 100px 0;
+}
+
+/* Clear visual separation between sections */
+.App > section + section {
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
 }
 
 .App > section:nth-of-type(odd) {
@@ -356,18 +363,19 @@ section {
 
 /* ======= THEME ======= */
 :root {
-  --color-primary: #7c3aed;
-  --color-primary-300: #a78bfa;
-  --color-accent: #22d3ee;
-  --color-text: #f5f7fa;
-  --color-muted: #9ca3af;
-  --color-bg-dark: #0b0f1a;
+  /* Light theme with purple UI */
+  --color-primary: #5B2D91;           /* deep purple */
+  --color-primary-300: #A88FD6;       /* light purple for gradients */
+  --color-accent: #5B2D91;            /* keep accents purple */
+  --color-text: #1b1b1f;              /* dark text on light */
+  --color-muted: #6b7280;             /* muted on light */
+  --color-bg-dark: #ffffff;           /* use light background for body below */
   --radius-md: 12px;
   --radius-lg: 20px;
-  --shadow-sm: 0 2px 10px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
-  --ring: 0 0 0 3px rgba(124, 58, 237, 0.4);
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+  --ring: 0 0 0 3px rgba(91, 45, 145, 0.25);
 }
 
 /* ======= LAYOUT ======= */
@@ -399,11 +407,11 @@ section {
 
 /* ======= ALTERNATING BACKGROUNDS ======= */
 .App > section:nth-of-type(odd) {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  background: var(--color-bg-light);
 }
 
 .App > section:nth-of-type(even) {
-  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  background: var(--color-bg-alt);
 }
 
 /* ======= TYPOGRAPHY ======= */
@@ -439,7 +447,7 @@ section {
 
 /* ======= CARD ======= */
 .card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  background: #fff;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-lg);
   padding: 28px;
@@ -469,7 +477,7 @@ section {
 }
 
 .btn-primary {
-  color: #0b0f1a;
+  color: #fff;
   background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
   box-shadow: var(--shadow-md);
 }

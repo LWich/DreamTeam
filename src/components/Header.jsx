@@ -20,7 +20,7 @@ const Header = ({ onLogin }) => {
             <a href="#products" onClick={() => setIsMobileMenuOpen(false)}>Тарифы</a>
             <a href="#method" onClick={() => setIsMobileMenuOpen(false)}>О методе</a>
             
-            <button className="btn btn-primary" onClick={onLogin}>
+            <button className="btn btn-start-diagnosis" onClick={onLogin}>
               Начать диагностику
             </button>
           </div>

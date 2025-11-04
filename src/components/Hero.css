@@ -46,12 +46,12 @@
     }
   }
   
-  .hero {
-    position: relative;
-    padding: 120px 0 80px;
-    background: radial-gradient(1200px 400px at 50% -100px, rgba(124,58,237,0.25), transparent),
-                radial-gradient(800px 300px at 80% 10%, rgba(34,211,238,0.18), transparent);
-  }
+.hero {
+  position: relative;
+  padding: 120px 0 80px;
+  background: radial-gradient(1200px 400px at 50% -100px, rgba(91,45,145,0.28), transparent),
+              radial-gradient(800px 300px at 80% 10%, rgba(168,143,214,0.22), transparent);
+}
   
   .hero-title {
     font-size: 56px;
